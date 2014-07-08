@@ -16,6 +16,7 @@
  * 		region
  * 		country
  * 		phone
+ * @see http://ipinfo.io/developers
  */
 function ipinfo($ip)
 {
