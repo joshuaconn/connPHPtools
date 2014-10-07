@@ -1,7 +1,8 @@
 <?php
 /**
- * File browser
- *
+ * WARNING: BE VERY CAREFUL WHERE YOU PUT THIS!
+ * 
+ * File browser (bare bones web interface to browse files on a PHP web server)
  */
 $dir = dirname(__FILE__);
 if(array_key_exists('dir', $_GET))
