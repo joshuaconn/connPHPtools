@@ -53,13 +53,10 @@ echo '<table>';
 foreach ($fsi as $f)
 {
 	echo "<tr><td>";
-	//echo "b";
-	//echo get_class($f);
 	echo SplFileInfo2html($f);
 	echo "</td><td style='text-align:right;'>";
 	echo htmlentities(human_filesize($f->getSize(),0));
 	echo "</td></tr>";
 }
 echo '</table>';
-var_dump($dirpathinfo['dirname']);
 ?>
