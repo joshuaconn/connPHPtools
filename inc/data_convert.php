@@ -1,5 +1,5 @@
 /**
- * data_convery.php
+ * data_convert.php
  * Basic data conversion functions
  * @author Joshua David Conn
  */
