@@ -1,3 +1,4 @@
+<?php
 /**
  * Turns an array into an HTML seletion box for use in a form
  * @param $options keys are values for the option elements; values are what gets displayed
@@ -8,14 +9,10 @@
 function disp_options(array $options,$default=null,$id='')
 {
 	if($id!='')
-	{
 		$id=" id='$id' name='$id'";
-	}
 	$retval = "<select$id>";
 	foreach ($options as $n=>$v)
-	{
-		$retval.='<option value="'.html_out($n).'"'.($n==$default?' selected':'').'>'.
-			html_out($v).'</option>';
-	}
+		$retval.='<option value="'.htmlentities($n).'"'.($n==$default?' selected':'').'>'.
+			htmlentities($v).'</option>';
 	return  $retval."</select>";
 }
