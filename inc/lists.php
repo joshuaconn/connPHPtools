@@ -14,6 +14,7 @@
  *	@example every(array('1',"2",3),'is_string'); //returns false
  *	@return boolean
  *	@see any()
+ *	@see mostly()
  */
 function every(array $list, $tester_callback=NULL)
 {
@@ -58,5 +59,33 @@ function any(array $list, $tester_callback=NULL)
 				return true;
 	}
 	return false;
+}
+
+/**
+ *	Test whether most items in a list passes a test.
+ *	Inspired by any() and all() in Python
+ *	@param array $list values to be tested
+ *	@param callback $tester_callback a function that accepts one parameter and
+ *		returns true or false.
+ *	@return boolean
+ *	@see every()
+ */
+function mostly(array $list, $tester_callback=NULL)
+{
+	$tot=count($list);
+	$positives=0;
+	if(is_null($tester_callback))
+	{
+		foreach($list as $l)
+			if($l)
+				$positives++;
+	}
+	else
+	{
+		foreach($list as $l)
+			if(call_user_func($tester_callback,$l))
+				$positives++;
+	}
+	return $positives>$tot/2;
 }
 ?>
