@@ -7,7 +7,7 @@
  *      echo "&lt;script>alert('This is ".jsEscStr($whose)." test');&lt;/script>";
  * @example 
  *      $type = '"Double-quote"';
- *      echo '&lt;script>alert("This is a '.jsEscStr($type).' test");&lt;/script>';
+ *      echo '&lt;script>alert("This is a '.jsEscStr($type,'"').' test");&lt;/script>';
  */
 function jsEscStr($inStr,$quotChar="'"){
 	if($quotChar!="'" && $quotChar!='"')
