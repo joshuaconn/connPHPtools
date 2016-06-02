@@ -1,3 +1,4 @@
+<?php
 /**
  * @param string $inStr substring of JavaScript literal
  * @param string $quotChar type of quotes used: " or '
