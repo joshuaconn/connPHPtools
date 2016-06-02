@@ -11,7 +11,7 @@
 function jsEscStr($inStr,$quotChar="'"){
 	if($quotChar!="'" && $quotChar!='"')
 		trigger_error(
-			'Bad quote passed to js_esc_str_literal():'.print_r($quotChar,true),
+			'Bad quote passed to jsEscStr():'.print_r($quotChar,true),
 			E_USER_ERROR);
 	return str_replace(
 		array("\\",$quotChar), 
