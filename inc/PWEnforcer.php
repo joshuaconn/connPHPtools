@@ -43,7 +43,7 @@ class PWEnforcer
 	
 	/**
 	 * @param int $num value passed to test() must have at least this many 
-		lower case characters
+	 *  lower case characters
 	 */
 	public function setMinLowerChars($num)
 	{
@@ -53,7 +53,7 @@ class PWEnforcer
 	
 	/**
 	 * @param int $num value passed to test() must have at least this many 
-		upper case characters
+	 *  upper case characters
 	 */
 	public function setMinUpperChars($num)
 	{
@@ -63,7 +63,7 @@ class PWEnforcer
 	
 	/**
 	 * @param int $num value passed to test() must have at least this many 
-		numeric characters
+	 *  numeric characters
 	 */
 	public function setMinNumericChars($num)
 	{
@@ -73,7 +73,7 @@ class PWEnforcer
 	
 	/**
 	 * @param int $num value passed to test() must have at least this many 
-		printing non-alphanumeric characters
+	 *  printing non-alphanumeric characters
 	 */
 	public function setMinSpecialChars($num)
 	{
