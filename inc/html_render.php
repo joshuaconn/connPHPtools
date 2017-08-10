@@ -16,3 +16,18 @@ function disp_options(array $options,$default=null,$id='')
 			htmlentities($v).'</option>';
 	return  $retval."</select>";
 }
+
+/**
+ * Takes an associative array and renders an html description list representation
+ * @param array $a keys are terms; values descriptions
+ * @return string the rendered HTML
+ * @example arr2dl(['Foo'=>'bar','Bim'=>'Bash']); //returns "<dl><dt>Foo</dt><dd>bar</dd><dt>Bim</dt><dd>bash</dd></dl>"
+ */
+function arr2dl(array $a)
+{
+	$r="<dl>";
+	foreach ($a as $k=>$v){
+		$r.="<dt>".htmlentities($k)."</dt><dd>".htmlentities($v)."</dd>";
+	}
+	return $r."</dl>";
+}
