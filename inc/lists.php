@@ -88,4 +88,30 @@ function mostly(array $list, $tester_callback=NULL)
 	}
 	return $positives>$tot/2;
 }
+
+/**
+ * Sorts an array of associative arrays by a common key in the sub arrays
+ * If the sub-arrays were rows from the result of an SQL query, 
+ * this would be the same as using an ORDER BY in that query
+ *
+ * @example sortBy(sortBy([
+ *       ['word'=>'in',   'pos'=>3],
+ *       ['word'=>'put',   'pos'=>1],
+ *       ['word'=>'order','pos'=>4],
+ *       ['word'=>'this',  'pos'=>2] ],
+ *   'pos'); // returns  [ ['word'=>'put', 'pos'=>1], ['word'=>'this','pos'=>2],['word']=>'in','pos'=>3],['word']=>'order','pos'=>4]]
+ * @param $arr array of associative arrays to be sorted
+ * @param $key associative array to sort by - must be an index in every single array
+ * @return array sorted array
+ */
+function sortBy(array $arr,$key) {
+    $retval = $arr;
+    $sort_arr = [];
+    foreach ($arr as $row) {
+        assert(array_key_exists($key,$row));
+        $sort_arr[]=$row[$key];
+    }
+    array_multisort($sort_arr,SORT_ASC,$retval);
+    return $retval;
+}
 ?>
